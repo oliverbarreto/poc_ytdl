@@ -31,11 +31,12 @@ class YoutubeAudioDownloader:
 
         # Configure yt-dlp options
         self.ydl_opts = {
-            "format": "m4a/bestaudio/best",
+            "format": f"{self.audio_format}/bestaudio/best",
             "paths": {"home": self.download_path},
             "logger": logger,
             "progress_hooks": [self._progress_hook],
         }
+        # Advanced options
         # self.ydl_opts = {
         # ℹ️ See help(yt_dlp.postprocessor) for a list of available Postprocessors and their arguments
         #     "format": "bestaudio/best",
@@ -95,6 +96,7 @@ class YoutubeAudioDownloader:
 
     def _progress_hook(self, d: dict):
         """Handle download progress updates"""
+
         video_id = d.get("info_dict", {}).get("id", "N/A")
         title = d.get("info_dict", {}).get("title", "N/A")
 

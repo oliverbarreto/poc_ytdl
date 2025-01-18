@@ -16,11 +16,18 @@
 </br>
 </br>
 
-# Objetive
+# Proof of Concept - Youtube Audio Downloader
+
+## Objetive
 
 We want to download the audio of a video from youtube and save it in a local folder.
 
-# Features
+This is a classic script, but this time, we are testing a new library called YT-DLP
+
+- Official Github Repository: https://github.com/yt-dlp/yt-dlp
+- Docs: https://pypi.org/project/yt-dlp/#embedding-examples
+
+## Features
 
 - use .env file to store the youtube video url
 - use yt-dlp to download the audio of the video
